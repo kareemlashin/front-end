@@ -1,0 +1,18 @@
+{
+  "name": "yarn",
+  "version": "1.0.0",
+  "description": "yarn learn",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "yarn"
+  ],
+  "author": "kareem lashin",
+  "license": "ISC"
+}

@@ -1,0 +1,84 @@
+@mixin shadow( $x, $y, $blur, $color ) {
+    -webkit-box-shadow: $x $y $blur $color;
+    -moz-box-shadow: $x $y $blur $color;
+    box-shadow: $x $y $blur $color;
+  }
+  
+  @mixin animate( $property: all, $duration: 1s, $easing: ease ) {
+    -webkit-transition: $property $duration $easing;
+    -moz-transition: $property $duration $easing;
+    -o-transition: $property $duration $easing;
+    transition: $property $duration $easing;
+  }
+  
+  @mixin links( $normal, $visited, $hover ) {
+    &:visited {
+      color: $visited;
+    }
+    &:hover, &:active, &:focus {
+      color: $hover;
+    }
+  }
+
+  .clearfix {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+ 
+    &:after { clear: both; }
+}
+$color: black;
+
+p {
+  color: $color;
+}
+.infobox {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: $color;
+  }
+  
+  .success {
+    @extend .infobox;
+    border-color: green;
+  }
+  
+  // The % prefix creates rules that never get used on their own.
+  // Theses classes are solely for the purpose of extending.
+  %info {
+    position: absolute;
+  }
+
+
+  
+// Loops
+$list: (orange, purple, teal);
+@each $item in $list {
+  .#{$item} {
+    background: $item;
+  }
+}
+
+$total: 10;
+$step: 360deg / $total;
+@for $i from 1 through $total {
+   .ray:nth-child(#{$i}){
+      background: adjust-hue( blue, $i * $step );
+   }
+}
+$xx:1;
+// If/Else
+p {
+  margin-left: if( $xx % 2 == 0, 0px, 50px );
+    @if $xx {
+        
+    } @else if  $xx {
+        
+    } @else if $xx {
+        
+    } @else {
+        
+    }
+}
